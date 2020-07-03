@@ -28,7 +28,9 @@ public class ProductController {
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<ProductDto> list() {
-		return productService.findAll().stream().map(p -> new ProductDto(p)).collect(Collectors.toList());
+		productService.findAll().stream().map(x->x.getDescription())
+	    return null;
+	    //return productService.findAll().stream().map(p -> new ProductDto(p)).collect(Collectors.toList());
 	}
 
 	@RequestMapping(value = "/{productId}", method = RequestMethod.GET)
